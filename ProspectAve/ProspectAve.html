@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<h1>Some Memorable Movies</h1>
+
+<h3><span class="ital">Prospect Avenue Music Video</span> (George Hanna, 2022) </h3>	
+	
+<div class="sideBySide">
+<img class="filmStill" onClick="onClick_DTRT_img01()" src="images/musicvideo1.jpg" alt="Prospect Ave">
+<img class="filmStill" onClick="onClick_DTRT_img02()" src="images/musicvideo2.jpg" alt="Prospect Ave">	
+<img class="filmStill" onClick="onClick_DTRT_img03()" src="images/musicvideo3.jpg" alt="Prospect Ave">	
+</div>
+<p class="filmInfo" id="DTRT_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ullam distinctio vitae soluta id! Omnis modi perferendis enim voluptates odio, nam aspernatur amet at, corrupti. Odit recusandae ratione earum temporibus modi autem fugiat inventore, assumenda iusto error cumque maxime unde, officia illum, corporis esse quasi. Debitis quas vel repudiandae obcaecati.</p>
+
+<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the movie </button>	
+
+</body>
+<script>
+	
+	var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+	gotoMovie_btn.style.visibility = "hidden";
+
+	var img01_clicked = false;
+	var img02_clicked= false;
+	var img03_clicked=false;
+
+	
+	
+var DTRT_text = document.getElementById("DTRT_text")	
+var DTRT00 = "During the summer of 2022, my friend showed me his song called “Prospect Avenue” and asked me if I’m interested in making a music video for it. I agreed because I’ve always wanted to shoot a music video for someone. I shot this video using a Sony Alpha a7s II that I rented from a website called Sharegrid.com. We filmed in two locations. The first location was in Downtown Milwaukee and the second location is a forest in Oconomowoc. I edited the video using Adobe Premiere Pro and Vegas Pro. The song and video were never released but maybe they will one day."
+
+var DTRT01 =  "By the forest that we filmed in, there was this abandoned Quarry that we stumbled upon. In that Quarry, we found this manmade hill that was about 18 feet tall. I told my friend to go to the top of that hill while I stayed at the bottom. I positioned the tripod in a way where the hill and the sky were the only things shown in the frame. This was filmed later in the day when the sun was setting which gave the sky an amazing color."
+
+var DTRT02 =  "I’ve always wanted to replicate a super8 camera effect but I wanted it to look as real as possible. I edited the dimensions of the video, added some grain, and found a super8 effect on the internet which added the orange rectangle on the left. I also didn’t use a tripod or a stabilizer because super 8 footage is usually shaky. Just like the previous shot, this was filmed when the sun was going down which gave the sky a beautiful orange color."
+
+var DTRT03 =  "This shot was edited with Vegas Pro because I’m a lot better with these types of effects in Vegas Pro, rather than Premiere Pro. This shot took place during a guitar solo at the end, so I wanted it to look psychedelic and trippy.  I did this by filming a still video of my friend playing the guitar in front of some trees. I then spent a good amount of time playing with the mirroring effect and masking effect to add 3 more versions of him playing the guitar. Then by zooming it in, the circle in the middle (which can barely be seen in the picture) opened up. The more I zoomed in, the bigger the circle got, which then lead to the next shot."
+
+
+
+DTRT_text.innerHTML = DTRT00;	
+	
+function onClick_DTRT_img01(){
+	DTRT_text.innerHTML = DTRT01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+	
+function onClick_DTRT_img02(){
+	DTRT_text.innerHTML = DTRT02;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+	
+function onClick_DTRT_img03(){
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked)
+	DTRT_text.innerHTML = DTRT03;
+	revealButton();
+}
+	
+function revealButton(){
+	if (img01_clicked && img02_clicked && img03_clicked){
+		console.log("REVEAL BUTTON");
+		gotoMovie_btn.style.visibility = "visible";
+	}
+}
+	
+function gotoMovie(){
+	window.open("https://www.youtube.com/watch?v=eee285cm6UM", "_blank");
+}
+	
+</script>
+</html>
+
