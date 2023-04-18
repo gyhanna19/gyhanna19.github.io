@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/collectionProject.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1> <span class="title">MY LIFE AND MOVIES</span> </h1>
+	<h3> <span class="instructions"> CLICK THE LEFT IMAGE, THEN DRAG MOUSE OVER THE RIGHT IMAGE TO REVEAL MY FAVORITE MOVIE FROM THAT YEAR </span> </h3>	
+	<div>
+      <img class="photograph" id="leftImage" src ="images/me1997.jpg" onClick="switchPhoto()" alt="1997 photo of me"> 
+	  <img class="photograph" id="rightImage" src ="images/film1997.jpg" onMouseOver="Switchtext()" alt="the 1997 movie Good Will Hunting"> 
+	</div>
+	
+	<p class="info" id="vid_text"></p>
+</body>
+<script>
+
+		var channel = 0;
+
+var leftImage = document.getElementById("leftImage");
+
+var photo1997 = "images/me1997.jpg";
+var photo2003 = "images/me2003.jpg";
+var photo2010 = "images/me2010.jpg";
+var photo2015 = "images/me2015.jpg";
+var photo2022 = "images/me2022.jpg";
+
+var rightImage = document.getElementById("rightImage")
+var film1997 = "images/film1997.jpg";
+var film2003 = "images/film2003.jpg";
+var film2010 = "images/film2010.jpg";
+var film2015 = "images/film2015.jpg";
+var film2022 = "images/film2022.jpg";
+
+var vid_text = document.getElementById("vid_text")	
+
+var info1997 =  "<b>1997</b><i><br>Good Will Hunting<br>&ldquo; You'll have bad times, but that'll always wake you up to the good stuff you weren't paying attention to.&rdquo; - Sean ";
+				
+var info2003 =  "<b>2003</b><i><br>Memories of Murder<br>&ldquo; Do you get up each morning too?&rdquo; - Detective Park Doo-Man ";
+
+var info2010 =  "<b>2010</b><i><br>The Social Network<br>&ldquo; We Lived On Farms, Then We Lived In Cities, And Now We're Going To Live On The Internet&rdquo; - Sean Parker ";
+
+var info2015 =  "<b>2015</b><i><br>The Martian<br>&ldquo; At some point, everything's gonna go south on you... everything's going to go south and you're going to say, this is it. This is how I end. Now you can either accept that, or you can get to work.&rdquo; - Mark Watney ";
+
+var info2022 =  "<b>2022</b><i><br>All Quiet On The Western Front<br>&ldquo; War is like a fever. No one really wants it, and suddenly it is there&rdquo; - Stanislaus Katczinsky ";
+	
+var info1997_2 =  "<b>1997</b><i><br>Age: 1";
+				
+var info2003_2 =  "<b>2003</b><i><br>Age: 7";
+
+var info2010_2 =  "<b>2010</b><i><br>Age: 13";
+
+var info2015_2 =  "<b>2015</b><i><br>Age: 18";
+
+var info2022_2 =  "<b>2022</b><i><br>Age: 25";
+
+
+
+
+
+
+function switchPhoto(){
+	if (channel % 2 === 0) {
+		channel ++;
+		if (channel == 1) {
+			leftImage.src = photo1997;
+			rightImage.src = film1997;
+			vid_text.innerHTML = info1997_2;
+		} else if (channel == 3) {
+			leftImage.src = photo2003;
+			rightImage.src = film2003;
+			vid_text.innerHTML = info2003_2;
+		} else if (channel == 5) {
+			leftImage.src = photo2010;
+			rightImage.src = film2010;
+			vid_text.innerHTML = info2010_2;
+		} else if (channel == 7) {
+			leftImage.src = photo2015;
+			rightImage.src = film2015;
+			vid_text.innerHTML = info2015_2;
+		} else if (channel == 9) {
+			leftImage.src = photo2022;
+			rightImage.src = film2022;
+			vid_text.innerHTML = info2022_2;
+		}
+	}	
+}
+	
+function Switchtext(){
+	if (channel % 2 !== 0) {
+		channel ++;
+		if (channel == 2) {
+			vid_text.innerHTML = info1997;
+		} else if (channel == 4) {
+			vid_text.innerHTML = info2003;
+		} else if (channel == 6) {
+			vid_text.innerHTML = info2010;
+		} else if (channel == 8) {
+			vid_text.innerHTML = info2015;
+		} else if (channel == 10) {
+			vid_text.innerHTML = info2022;
+			channel = 0;
+		}
+	}
+}
+
+
+</script>	
+	
+	
+	
+</html>
